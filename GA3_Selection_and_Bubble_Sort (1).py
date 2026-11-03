@@ -1,4 +1,6 @@
 
+# GA3 - Bubble Sort and Selection Sort
+
 arr = []
 
 n = int(input("Enter number of elements: "))
@@ -7,12 +9,32 @@ for i in range(n):
     x = int(input("Enter element: "))
     arr.append(x)
 
+print("Original Array:", arr)
+
+# Bubble Sort
+a = arr.copy()
+
 for i in range(n):
     for j in range(n-i-1):
-        if arr[j] > arr[j+1]:
-            arr[j], arr[j+1] = arr[j+1], arr[j]
+        if a[j] > a[j+1]:
+            a[j], a[j+1] = a[j+1], a[j]
 
-print("Sorted array:", arr)
+print("Bubble Sort:", a)
+
+
+# Selection Sort
+b = arr.copy()
+
+for i in range(n):
+    min_index = i
+
+    for j in range(i+1, n):
+        if b[j] < b[min_index]:
+            min_index = j
+
+    b[i], b[min_index] = b[min_index], b[i]
+
+print("Selection Sort:", b)
 
 # ALGORITHM
 # 1. Start.
